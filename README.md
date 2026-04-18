@@ -37,10 +37,6 @@ Telegram bot for tracking personal finances. Pulls live currency exchange rates 
 - **`finance-service`** — domain service. Owns persistence and business rules; structured with DDD + hexagonal architecture (domain module inside).
 - **`shared-api`** — shared Protobuf / gRPC contracts and Kafka Avro schemas consumed by both services.
 
-## Tech Stack
-
-Kotlin 1.9 · JVM 17 · Spring Boot (WebFlux) · MongoDB · Redis · NATS · Kafka + Schema Registry · gRPC · Gradle · Docker Compose.
-
 ## Project Structure
 
 ```
