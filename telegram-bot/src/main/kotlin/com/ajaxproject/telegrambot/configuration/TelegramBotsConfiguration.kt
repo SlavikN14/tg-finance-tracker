@@ -1,6 +1,5 @@
 package com.ajaxproject.telegrambot.configuration
 
-import com.ajaxproject.telegrambot.service.telegram.TelegramUpdateDispatcherService
 import com.ajaxproject.telegrambot.BotProperties
 import com.ajaxproject.telegrambot.MonobankProperties
 import io.nats.client.Connection
@@ -10,18 +9,16 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.client.WebClient
-import org.telegram.telegrambots.meta.TelegramBotsApi
-import org.telegram.telegrambots.updatesreceivers.DefaultBotSession
+import org.telegram.telegrambots.client.okhttp.OkHttpTelegramClient
+import org.telegram.telegrambots.meta.generics.TelegramClient
 
 @Configuration
 @EnableConfigurationProperties(BotProperties::class, MonobankProperties::class)
 class TelegramBotsConfiguration {
 
     @Bean
-    fun telegramBotsApi(property: TelegramUpdateDispatcherService): TelegramBotsApi =
-        TelegramBotsApi(DefaultBotSession::class.java).apply {
-            registerBot(property)
-        }
+    fun telegramClient(botProperties: BotProperties): TelegramClient =
+        OkHttpTelegramClient(botProperties.token)
 
     @Bean
     fun webClient(builder: WebClient.Builder, monobankProperties: MonobankProperties): WebClient = builder

@@ -1,8 +1,8 @@
 plugins {
-    id("org.springframework.boot") version "3.1.3"
-    id("io.spring.dependency-management") version "1.1.3"
-    kotlin("plugin.spring") version "1.9.0"
-    kotlin("plugin.allopen") version "1.9.0"
+    id("org.springframework.boot") version "3.5.13"
+    id("io.spring.dependency-management") version "1.1.7"
+    kotlin("plugin.spring") version "2.0.21"
+    kotlin("plugin.allopen") version "2.0.21"
 }
 
 dependencies {
@@ -11,7 +11,7 @@ dependencies {
     implementation(project(":finance-service:infrastructure"))
     implementation(project(":shared-api"))
 
-    implementation("io.nats:jnats:2.16.14")
+    implementation("io.nats:jnats:2.25.2")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:1.2.2")

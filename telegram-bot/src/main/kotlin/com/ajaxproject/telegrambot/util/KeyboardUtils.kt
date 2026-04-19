@@ -2,19 +2,20 @@ package com.ajaxproject.telegrambot.util
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardRow
 
 object KeyboardUtils {
 
     fun inlineKeyboardInOneRow(vararg buttons: InlineKeyboardButton): InlineKeyboardMarkup {
         return InlineKeyboardMarkup.builder()
-            .keyboardRow(buttons.toList())
+            .keyboardRow(InlineKeyboardRow(buttons.toList()))
             .build()
     }
 
     fun inlineKeyboardWithManyRows(vararg buttons: InlineKeyboardButton): InlineKeyboardMarkup {
         val keyboardBuilder = InlineKeyboardMarkup.builder()
         buttons.forEach { button ->
-            keyboardBuilder.keyboardRow(listOf(button))
+            keyboardBuilder.keyboardRow(InlineKeyboardRow(listOf(button)))
         }
         return keyboardBuilder.build()
     }

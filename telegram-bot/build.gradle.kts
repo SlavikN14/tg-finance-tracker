@@ -1,20 +1,20 @@
-val telegramBotVersion = "6.8.0"
+val telegramBotVersion = "9.5.0"
 
 plugins {
-    id("org.springframework.boot") version "3.1.3"
-    id("io.spring.dependency-management") version "1.1.3"
-    kotlin("plugin.spring") version "1.9.0"
-    kotlin("plugin.allopen") version "1.9.0"
+    id("org.springframework.boot") version "3.5.13"
+    id("io.spring.dependency-management") version "1.1.7"
+    kotlin("plugin.spring") version "2.0.21"
+    kotlin("plugin.allopen") version "2.0.21"
 }
 
 dependencies {
     implementation(project(":shared-api"))
 
-    implementation("org.telegram:telegrambots:$telegramBotVersion")
-    implementation("org.telegram:telegrambots-spring-boot-starter:$telegramBotVersion")
+    implementation("org.telegram:telegrambots-springboot-longpolling-starter:$telegramBotVersion")
+    implementation("org.telegram:telegrambots-client:$telegramBotVersion")
 
     implementation("com.google.code.gson:gson:2.10.1")
-    implementation("io.nats:jnats:2.16.14")
+    implementation("io.nats:jnats:2.25.2")
 
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")

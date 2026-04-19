@@ -6,8 +6,10 @@ import com.ajaxproject.telegrambot.service.UserSessionService
 import com.ajaxproject.telegrambot.service.updatemodels.UpdateRequest
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
-import org.telegram.telegrambots.bots.TelegramLongPollingBot
+import org.telegram.telegrambots.longpolling.starter.SpringLongPollingBot
+import org.telegram.telegrambots.longpolling.util.LongPollingSingleThreadUpdateConsumer
 import org.telegram.telegrambots.meta.api.objects.Update
+import org.telegram.telegrambots.meta.api.objects.message.Message
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import reactor.core.scheduler.Schedulers
@@ -18,11 +20,13 @@ class TelegramUpdateDispatcherService(
     private val userSessionService: UserSessionService,
     private val botProperties: BotProperties,
     private val handlers: List<UserRequestHandler>,
-) : TelegramLongPollingBot(botProperties.token) {
+) : SpringLongPollingBot, LongPollingSingleThreadUpdateConsumer {
 
-    override fun getBotUsername(): String = botProperties.username
+    override fun getBotToken(): String = botProperties.token
 
-    override fun onUpdateReceived(update: Update) {
+    override fun getUpdatesConsumer(): LongPollingSingleThreadUpdateConsumer = this
+
+    override fun consume(update: Update) {
         Mono.just(update)
             .filter { update.hasMessage() || update.hasCallbackQuery() }
             .map { toUpdateRequest(it) }
@@ -33,8 +37,9 @@ class TelegramUpdateDispatcherService(
     }
 
     private fun logNotDispatched(update: Update) {
-        val userId: Long = (update.message?.from?.id ?: update.callbackQuery?.message?.from?.id) as Long
-        val textFromUser: String = (update.message?.text ?: update.callbackQuery?.message?.text).toString()
+        val callbackMessage = update.callbackQuery?.message as? Message
+        val userId: Long = (update.message?.from?.id ?: callbackMessage?.from?.id) as Long
+        val textFromUser: String = (update.message?.text ?: callbackMessage?.text).toString()
 
         log.info("Update from user: userId={}, updateDetails={}", userId, textFromUser)
     }

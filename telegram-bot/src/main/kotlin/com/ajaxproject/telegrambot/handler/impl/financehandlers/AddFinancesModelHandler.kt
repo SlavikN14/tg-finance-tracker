@@ -20,7 +20,7 @@ import com.ajaxproject.telegrambot.service.isTextMessage
 import com.ajaxproject.telegrambot.service.updatemodels.UpdateRequest
 import com.ajaxproject.telegrambot.util.KeyboardUtils
 import org.springframework.stereotype.Component
-import org.telegram.telegrambots.meta.api.objects.Message
+import org.telegram.telegrambots.meta.api.objects.message.Message
 import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.switchIfEmpty
 import java.util.Date

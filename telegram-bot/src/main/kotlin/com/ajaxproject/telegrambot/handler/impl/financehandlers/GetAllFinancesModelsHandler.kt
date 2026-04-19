@@ -16,7 +16,7 @@ import com.ajaxproject.telegrambot.service.UserSessionService
 import com.ajaxproject.telegrambot.service.updatemodels.UpdateRequest
 import com.ajaxproject.telegrambot.util.KeyboardUtils
 import org.springframework.stereotype.Component
-import org.telegram.telegrambots.meta.api.objects.Message
+import org.telegram.telegrambots.meta.api.objects.message.Message
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.switchIfEmptyDeferred
