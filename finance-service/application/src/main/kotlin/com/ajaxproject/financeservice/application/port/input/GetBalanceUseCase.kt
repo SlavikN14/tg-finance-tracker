@@ -1,4 +1,4 @@
-package com.ajaxproject.financeservice.application.port.`in`
+package com.ajaxproject.financeservice.application.port.input
 
 import reactor.core.publisher.Mono
 import java.math.BigDecimal

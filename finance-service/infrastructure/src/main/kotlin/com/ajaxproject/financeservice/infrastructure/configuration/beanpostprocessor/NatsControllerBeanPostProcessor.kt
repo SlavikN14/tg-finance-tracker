@@ -1,6 +1,6 @@
 package com.ajaxproject.financeservice.infrastructure.configuration.beanpostprocessor
 
-import com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.NatsController
+import com.ajaxproject.financeservice.infrastructure.adapter.input.nats.NatsController
 import com.google.protobuf.GeneratedMessageV3
 import io.nats.client.Connection
 import io.nats.client.Dispatcher

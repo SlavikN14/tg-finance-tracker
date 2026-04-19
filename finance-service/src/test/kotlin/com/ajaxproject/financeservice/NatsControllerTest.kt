@@ -1,10 +1,10 @@
 package com.ajaxproject.financeservice
 
 import com.ajaxproject.financeservice.domain.FinanceType
-import com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.mapper.toProto
-import com.ajaxproject.financeservice.infrastructure.adapter.out.persistence.mongo.MongoFinanceRepository
-import com.ajaxproject.financeservice.infrastructure.adapter.out.persistence.mongo.entity.MongoFinance
-import com.ajaxproject.financeservice.infrastructure.adapter.out.persistence.mongo.mapper.toDomain
+import com.ajaxproject.financeservice.infrastructure.adapter.input.nats.mapper.toProto
+import com.ajaxproject.financeservice.infrastructure.adapter.output.persistence.mongo.MongoFinanceRepository
+import com.ajaxproject.financeservice.infrastructure.adapter.output.persistence.mongo.entity.MongoFinance
+import com.ajaxproject.financeservice.infrastructure.adapter.output.persistence.mongo.mapper.toDomain
 import com.ajaxproject.internalapi.NatsSubject
 import com.ajaxproject.internalapi.finance.input.reqreply.CreateFinanceRequest
 import com.ajaxproject.internalapi.finance.input.reqreply.CreateFinanceResponse

@@ -1,15 +1,17 @@
 package com.ajaxproject.financeservice.application.service
 
-import com.ajaxproject.financeservice.application.port.`in`.CreateFinanceUseCase
-import com.ajaxproject.financeservice.application.port.`in`.DeleteUserFinancesUseCase
-import com.ajaxproject.financeservice.application.port.`in`.GetBalanceUseCase
-import com.ajaxproject.financeservice.application.port.`in`.GetFinancesUseCase
-import com.ajaxproject.financeservice.application.port.out.FinanceRepository
+import com.ajaxproject.financeservice.application.port.input.CreateFinanceUseCase
+import com.ajaxproject.financeservice.application.port.input.DeleteUserFinancesUseCase
+import com.ajaxproject.financeservice.application.port.input.GetBalanceUseCase
+import com.ajaxproject.financeservice.application.port.input.GetFinancesUseCase
+import com.ajaxproject.financeservice.application.port.output.FinanceRepository
 import com.ajaxproject.financeservice.domain.Finance
 import com.ajaxproject.financeservice.domain.FinanceType
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import reactor.kotlin.core.util.function.component1
+import reactor.kotlin.core.util.function.component2
 import java.math.BigDecimal
 
 @Service
@@ -35,5 +37,6 @@ class FinanceService(
 
     private fun sumByType(userId: Long, type: FinanceType): Mono<BigDecimal> =
         financeRepository.findByUserIdAndFinanceType(userId, type)
-            .reduce(BigDecimal.ZERO) { acc, finance -> acc.add(finance.amount) }
+            .map { it.amount }
+            .reduce(BigDecimal.ZERO, BigDecimal::add)
 }

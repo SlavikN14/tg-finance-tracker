@@ -1,4 +1,4 @@
-package com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.mapper
+package com.ajaxproject.financeservice.infrastructure.adapter.input.nats.mapper
 
 import com.ajaxproject.financeservice.domain.Finance
 import com.ajaxproject.financeservice.domain.FinanceType

@@ -1,7 +1,7 @@
-package com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.controller
+package com.ajaxproject.financeservice.infrastructure.adapter.input.nats.controller
 
-import com.ajaxproject.financeservice.application.port.`in`.DeleteUserFinancesUseCase
-import com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.NatsController
+import com.ajaxproject.financeservice.application.port.input.DeleteUserFinancesUseCase
+import com.ajaxproject.financeservice.infrastructure.adapter.input.nats.NatsController
 import com.ajaxproject.internalapi.NatsSubject
 import com.ajaxproject.internalapi.finance.input.reqreply.DeleteFinanceByIdRequest
 import com.ajaxproject.internalapi.finance.input.reqreply.DeleteFinanceByIdResponse

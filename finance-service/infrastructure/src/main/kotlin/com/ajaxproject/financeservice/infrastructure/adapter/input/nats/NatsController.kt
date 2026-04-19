@@ -1,4 +1,4 @@
-package com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats
+package com.ajaxproject.financeservice.infrastructure.adapter.input.nats
 
 import com.google.protobuf.GeneratedMessageV3
 import com.google.protobuf.Parser

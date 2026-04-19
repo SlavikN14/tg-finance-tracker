@@ -1,7 +1,7 @@
-package com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.controller
+package com.ajaxproject.financeservice.infrastructure.adapter.input.nats.controller
 
-import com.ajaxproject.financeservice.application.port.`in`.GetBalanceUseCase
-import com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.NatsController
+import com.ajaxproject.financeservice.application.port.input.GetBalanceUseCase
+import com.ajaxproject.financeservice.infrastructure.adapter.input.nats.NatsController
 import com.ajaxproject.internalapi.NatsSubject
 import com.ajaxproject.internalapi.finance.input.reqreply.GetCurrentBalanceRequest
 import com.ajaxproject.internalapi.finance.input.reqreply.GetCurrentBalanceResponse

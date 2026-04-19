@@ -1,9 +1,9 @@
-package com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.controller
+package com.ajaxproject.financeservice.infrastructure.adapter.input.nats.controller
 
-import com.ajaxproject.financeservice.application.port.`in`.GetFinancesUseCase
-import com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.NatsController
-import com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.mapper.toDomain
-import com.ajaxproject.financeservice.infrastructure.adapter.`in`.nats.mapper.toProto
+import com.ajaxproject.financeservice.application.port.input.GetFinancesUseCase
+import com.ajaxproject.financeservice.infrastructure.adapter.input.nats.NatsController
+import com.ajaxproject.financeservice.infrastructure.adapter.input.nats.mapper.toDomain
+import com.ajaxproject.financeservice.infrastructure.adapter.input.nats.mapper.toProto
 import com.ajaxproject.internalapi.NatsSubject
 import com.ajaxproject.internalapi.finance.commonmodels.FinanceMessage
 import com.ajaxproject.internalapi.finance.input.reqreply.GetAllFinancesByIdRequest

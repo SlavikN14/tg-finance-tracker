@@ -1,4 +1,4 @@
-package com.ajaxproject.financeservice.application.port.`in`
+package com.ajaxproject.financeservice.application.port.input
 
 import com.ajaxproject.financeservice.domain.Finance
 import com.ajaxproject.financeservice.domain.FinanceType
