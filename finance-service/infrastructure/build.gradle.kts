@@ -13,7 +13,7 @@ dependencies {
     implementation("io.nats:jnats:2.25.2")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:1.2.2")
+    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 }
 
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {

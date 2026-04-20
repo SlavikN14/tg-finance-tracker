@@ -12,5 +12,5 @@ dependencyManagement {
 dependencies {
     implementation(project(":finance-service:domain"))
     implementation("org.springframework:spring-context")
-    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:1.2.2")
+    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 }

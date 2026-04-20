@@ -14,9 +14,9 @@ dependencies {
     implementation("io.nats:jnats:2.25.2")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:1.2.2")
+    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 
-    testImplementation("io.projectreactor:reactor-test:3.5.11")
+    testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

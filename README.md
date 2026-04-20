@@ -1,8 +1,10 @@
 # Finance Bot
 
 [![Build](https://github.com/SlavikN14/telegram-bot-finance/actions/workflows/build.yaml/badge.svg)](https://github.com/SlavikN14/telegram-bot-finance/actions/workflows/build.yaml)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
-[![Java](https://img.shields.io/badge/Java-17-007396?logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/17/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![Java](https://img.shields.io/badge/Java-21-007396?logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5-6DB33F?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Gradle](https://img.shields.io/badge/Gradle-8.11-02303A?logo=gradle&logoColor=white)](https://gradle.org/)
 
 Telegram bot for tracking personal finances. Pulls live currency exchange rates from the **[Monobank Open API](https://api.monobank.ua/bank/currency)** and lets users log income and expenses, monitor balance, and view reports — all from chat.
 
@@ -55,7 +57,7 @@ Dependency direction inside `finance-service/`:
 
 ## Prerequisites
 
-- JDK 17
+- JDK 21
 - Docker + Docker Compose
 - Telegram bot token from [@BotFather](https://t.me/BotFather)
 
